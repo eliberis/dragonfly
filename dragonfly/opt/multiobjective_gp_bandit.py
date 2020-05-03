@@ -665,7 +665,7 @@ class CPMultiObjectiveGPBandit(MultiObjectiveGPBandit):
     # since we don't expect pre-computing distances will be necessary there.
     for idx, dom in enumerate(self.domain.list_of_domains):
       if dom.get_type() == 'neural_network' and self.domain_dist_computers[idx] is None:
-        from nn.otmann import get_otmann_distance_computer_from_args
+        from ..nn.otmann import get_otmann_distance_computer_from_args
         otm_mislabel_coeffs =  \
           dummy_gp_fitter.domain_kernel_params_for_each_domain[idx].otmann_mislabel_coeffs
         otm_struct_coeffs =  \
